@@ -1,0 +1,29 @@
+.rightContentBox h1 {
+  color: #8349ff;
+}
+
+.rightContentBox h2 {
+  color:#cdb6ff;
+}
+
+.rightContentBox h3 {
+  color: lavender;
+}
+
+.rightContentBox p {
+  text-align: justify;
+  color: white;
+}
+
+.rightContentBox ul {
+  color:white;
+  text-align: justify;
+}
+
+.rightContentBox a {
+  color:#C71585;
+}
+
+.rightContentBox table {
+  color: lavender;
+}

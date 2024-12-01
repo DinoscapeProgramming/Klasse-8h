@@ -1,0 +1,60 @@
+.rightContentBox {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+.rightContentBox header {
+    background-color: #000080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.rightContentBox nav {
+    margin: 20px 0;
+    text-align: center;
+}
+.rightContentBox nav a {
+    margin: 0 15px;
+    color: #000080;
+    text-decoration: none;
+    font-weight: bold;
+}
+.rightContentBox nav a:hover {
+    text-decoration: underline;
+}
+.rightContentBox .content {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.rightContentBox h1, h2, h3 {
+    color: #333;
+}
+.rightContentBox img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.rightContentBox footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #a51c30;
+    color: white;
+}
+.rightContentBox .button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.rightContentBox .button:hover {
+    background-color: #0056b3;
+}

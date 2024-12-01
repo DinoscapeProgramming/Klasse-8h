@@ -1,0 +1,33 @@
+.rightContentBox {
+	mergin:0;
+	background-color:#deccd5;}
+.rightContentBox h1{
+	color: #5e3c43;
+}
+.rightContentBox h2{
+color:#5e3c43;}
+	
+.rightContentBox body{
+color#5e3c43:;}
+.rightContentBox p{
+	font-size:45;
+	color:#5e3c43;
+}
+.rightContentBox table th,td{
+	font-size:45;
+	color:#5e3c43;
+}
+.rightContentBox ol{
+	font-size:45;
+	color:#5e3c43;
+}
+.rightContentBox img{
+	position: relative;
+	width: 100%;
+	color:#5e3c43;
+}
+.rightContentBox h1,h2{
+	font-size:75;
+	color:#5e3c43;
+}
+

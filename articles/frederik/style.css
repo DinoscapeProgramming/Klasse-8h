@@ -1,0 +1,9 @@
+.rightContentBox {
+  background-color: #4af7e6;
+  overflow-x: hidden;
+  color: black;
+}
+
+.rightContentBox tbody {
+  background-color: transparent;
+}

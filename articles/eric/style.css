@@ -1,0 +1,80 @@
+.rightContentBox .header {
+  background-color: #F5A9A9;
+  padding: 20px;
+  text-align: center;
+}
+
+.rightContentBox h1{
+ font-variant: small-caps;
+}
+
+.rightContentBox h2{
+ text-align: center;
+ text-decoration: underline;
+}
+
+.rightContentBox h3{
+ font-variant: small-caps;
+}
+
+.rightContentBox p{
+ text-align: justify;
+ 
+}
+
+.rightContentBox img {
+    position: relative;
+    border-radius: 100px;
+}
+
+.rightContentBox center {
+   margin: 0 auto;
+   width: 800px;
+   display: block;
+}
+
+.rightContentBox .topnav {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.rightContentBox .topnav a {
+  float: left;
+  display: block;
+  color: #F5A9A9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.rightContentBox .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.rightContentBox .columnFront{
+float: left;
+  width: 47%;
+  padding-left: 2%;
+}
+
+.rightContentBox a {color: #F5A9A9; background-color: transparent;
+  text-decoration: none;}
+
+.rightContentBox .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rightContentBox table {
+	text-align: center;
+}
+
+
+@media screen and (max-width:600px) {
+  .rightContentBox .column {
+    width: 100%;
+  }
+}
+/*Ich hoffe sie sind mir nicht böse wenn ich ihr Style-Sheet verwende, Frau Schuhmacher?*/

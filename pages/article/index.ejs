@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <meta name="description" content="Das Wiki für Programmierung">
+    <title>Klasse 8h</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/pages/article/style.css" type="text/css">
+	  <link reL="stylesheet" href="<%= `/articles/${title}/style.css` %>" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script defer src="/pages/article/script.js"></script>
+    <script defer src="<%= `/articles/${title}/script.js` %>"></script>
+  </head>
+  <body>
+    <div class="topLayerContainer">
+      <div class="navbar">
+        <h1 class="logo">
+          <a href="/">Klasse 8h</a>
+        </h1>
+        <input
+          class="searchBarInput"
+          id="searchBarInput"
+          placeholder="Suchen..."
+          list="searchItems"
+        />
+        <datalist id="searchItems">
+          <% articles.forEach((article) => {
+            if (title === "popular") article = article[0];
+            %>
+              <option value="<%= article[0].toUpperCase() + article.substring(1) %>"></option>
+            <%
+          }); %>
+        </datalist>
+        <div class="feedbackContainer" style="
+          position: absolute;
+          top: 18.5px;
+          right: 16.5px;
+          font-size: 25px;
+        ">
+          <i id="likeButton" class="fa fa-thumbs-up" aria-hidden="true" style="
+            color: #6df96d;
+            cursor: pointer;
+          "></i>
+          <i id="dislikeButton" class="fa fa-thumbs-down" aria-hidden="true" style="
+            color: #ff4343;
+            cursor: pointer;
+          "></i>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: row">
+        <div class="leftContentBox">
+          <ul class="leftContentBoxList">
+            <li><a href="/">Startseite</a></li>
+            <li><a href="/popular">Beliebt</a></li>
+            <li><a href="/random">Zufällig</a></li>
+            <hr style="
+                opacity: 0.7;
+                margin-bottom: 15px;
+            ">
+            <li><a href="/write">Artikel schreiben</a></li>
+            <li><a href="/logs">Logbuch</a></li>
+            <hr style="
+                opacity: 0.7;
+                margin-bottom: 15px;
+            ">
+            <li><a id="downloadButton">Herunterladen</a></li>
+            <li><a id="printButton"">Druckversion</a></li>
+            <li><a id="qrcodeButton">QR-Code</a></li>
+            <li><a id="shortlinkButton">Kurzlink</a></li>
+          </ul>
+        </div>
+        <div id="rightContentBox" class="rightContentBox">
+          <% if (title === "popular") { %>
+            <div class="students-grid">
+              <% articles.filter((article) => article !== "popular").forEach(([article, likes, dislikes]) => { %>
+                <a href="<%= `/${article}` %>" style="text-decoration: none;">
+                  <div class="student-card">
+                    <div class="student-name">
+                      <%= article[0].toUpperCase() + article.substring(1) %><span style="
+                        font-size: 0.6em;
+                        margin-left: 5px;
+                        display: inline-block;
+                        overflow-wrap: break-word;
+                        word-break: break-word;
+                        word-break: break-all;
+                      "><%= ` (${likes - dislikes} Like${((likes - dislikes) === 1) ? "" : "s"})` %></span>
+                    </div>
+                  </div>
+                </a>
+              <% }); %>
+            </div>
+          <% } else { %>
+            <%- content %>
+          <% } %>
+		    </div>
+      </div>
+    </div>
+            <div
+              id="feedbackModal"
+              class="feedbackModal"
+              style="
+                display: none;
+                align-items: center;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.4);
+              "
+            >
+              <div
+                style="
+                  position: relative;
+                  background-color: #fefefe;
+                  margin: auto;
+                  padding: 0;
+                  border: 1px solid #888;
+                  width: 37.5%;
+                  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 11%), 0 6px 20px 0 rgb(0 0 0 / 0%);
+                  -webkit-animation-name: animatetop;
+                  -webkit-animation-duration: 0.4s;
+                  animation-name: animatetop;
+                  animation-duration: 0.4s;
+                  border-radius: 15px;
+                  font-family: system-ui;
+                "
+              >
+              <i id="feedbackModalCloseIcon" class="fa fa-times" aria-hidden="true" style="
+                cursor: pointer;
+                font-size: 32.5px;
+                color: #000000ed;
+                float: right;
+                margin-top: 18.5px;
+                margin-right: 18.5px;
+                -webkit-text-stroke: 5.5px white;
+              "></i>
+                <h2
+                  style="
+                    font-weight: 600;
+                    font-size: 26.75px;
+                    color: #000000c7;
+                    margin: 25px 25px 7.5px;
+                  "
+                >
+                  Ihr Kurzlink
+                </h2>
+                <textarea
+                  id="feedbackModalContentCommentInput"
+                  disabled
+                  style="
+                    width: calc(100% - 63.25px);
+                    margin-top: 7.5px;
+                    margin-left: 25px;
+                    border: 1px solid rgba(0, 0, 0, 0.59);
+                    border-radius: 7.5px;
+                    font-family: system-ui;
+                    resize: vertical;
+                    height: 10.25vh;
+                    min-height: 58.25px;
+                    max-height: 65vh;
+                    box-sizing: border-box;
+                    padding: 10px;
+                  "
+                  placeholder="Let us know your suggestions and ideas (optional)"
+                ></textarea
+                ><button
+                  id="copyShortLinkButton"
+                  class="sendFeedbackButton"
+                  style="
+                    height: 27.5px;
+                    font-family: system-ui;
+                    border: none;
+                    border-radius: 7.5px;
+                    background-color: #155de1;
+                    color: white;
+                    padding: 15px;
+                    padding-top: 7.5px;
+                    padding-bottom: 25px;
+                    cursor: pointer;
+                    margin-top: 1.25px;
+                    margin-bottom: 17.5px;
+                    margin-left: calc(100% - 125px);
+                  "
+                >
+                  Copy Link
+                </button>
+              </div>
+            </div>
+  </body>
+</html>

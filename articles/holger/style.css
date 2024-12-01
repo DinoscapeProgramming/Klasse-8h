@@ -1,0 +1,114 @@
+.rightContentBox .header {
+  background-color: #ff893a;
+  padding: 20px;
+  text-align: center;
+}
+
+.rightContentBox h1 {
+ font-variant: small-caps;
+ text-align: center;
+}
+
+.rightContentBox h2 {
+ text-align: center;
+ text-decoration: underline;
+}
+
+.rightContentBox h3 {
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.rightContentBox h4 {
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.rightContentBox h5 {
+ font-variant: small-caps;
+  text-align: center;
+}
+
+.rightContentBox p {
+ text-align: center;
+}
+
+.rightContentBox img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100px;
+}
+
+.rightContentBox center {
+   margin: 0 auto;
+   width: 800px;
+   display: center;
+}
+
+.rightContentBox .topnav {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.rightContentBox .topnav a {
+  float: center;
+  display: block;
+  color: #ff893a;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.rightContentBox .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.rightContentBox .columnFront {
+  float: center;
+  width: 47%;
+  padding-left: 2%;
+}
+
+.rightContentBox a {
+  color: #F5A9A9;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.rightContentBox .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rightContentBox table {
+  text-align: center;
+  position:relative;
+  left: 40%;
+}
+
+@media screen and (max-width:600px) {
+  .rightContentBox .column {
+    width: 100%;
+  }
+}
+
+.rightContentBox ol {
+  position:relative;
+  left:40%;
+}
+
+.rightContentBox ul {
+  position: relative;
+  left: 40%;
+}
+
+.rightContentBox a:link, .rightContentBox a:visited{
+  position: relative;
+  left: 40%;
+  text-decoration: none;
+  color: #1b72ff;
+  font-size: 50px;
+}

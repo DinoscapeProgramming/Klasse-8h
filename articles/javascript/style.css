@@ -1,0 +1,11 @@
+.rightContentBox h2 {
+  font-family: sans-serif;
+}
+
+.rightContentBox h2 span {
+	font-size: 10px;
+}
+
+.rightAlignedText {
+	text-align: right;
+}
